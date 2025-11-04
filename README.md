@@ -31,21 +31,13 @@ style: |
 ---
 
 # Introducción a la Programación con Python y NLP
-
+![bg right:30% width:300px](https://github.com/j2deme/J2deme-Slides/raw/master/src/assets/Logo-TECNM.svg)
 ## Instructor
 Dr. Jorge Cein Villanueva Guzmán
 
 ## Objetivo del taller
 Desarrollar la capacidad de implementar aplicaciones prácticas de Inteligencia Artificial aplicadas al procesamiento de lenguaje natural (NLP) usando Python y librerías especializadas.
 
----
-## Mi Primer Código python
-
-```python
-def hola_mundo():
-    print("¡Hola desde Python!")
-    return "Éxito"
-```
 ---
 <style scoped>
 section {
@@ -482,4 +474,6 @@ while True:
     response = chatbot_response(user_input)
     print(f"ChatBot: {response}")
 ```
+---
+**GRACIAS POR LA ATENCIÓN PRESTADA**
 ---
