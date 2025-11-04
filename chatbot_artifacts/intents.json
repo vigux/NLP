@@ -6,7 +6,9 @@
       "buenas tardes",
       "qué tal",
       "hey",
-      "hola"
+      "hola",
+      "hola",
+      "hola que tal"
     ],
     "responses": [
       "¡Hola! ¿En qué puedo ayudarte?",
@@ -33,12 +35,14 @@
       "¿va a llover hoy?",
       "pronóstico del tiempo",
       "clima actual",
-      "buenos dias"
+      "buenos dias",
+      "¿cómo está el clima?"
     ],
     "responses": [
       "No tengo datos del clima en tiempo real, pero puedo ayudarte a consultarlo si me indicas tu ciudad.",
       "El clima depende de tu ubicación. ¿En qué ciudad te encuentras?",
-      "como esta el clima"
+      "como esta el clima",
+      "¿cómo está el clima?"
     ]
   },
   "agradecimiento": {
@@ -55,10 +59,14 @@
   },
   "saludo amplio": {
     "patterns": [
+      "hola que tal",
+      "hola que tal",
       "hola que tal"
     ],
     "responses": [
-      "hola, como estas"
+      "hola, como estas",
+      "como estas",
+      "como estas?"
     ]
   }
 }
