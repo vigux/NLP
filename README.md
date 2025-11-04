@@ -259,6 +259,42 @@ Similar a stemming, reduce las palabras a su forma base o de diccionario, conoci
 Implica usar un diccionario y análisis morfológico para devolver la forma base de las palabras.
 
 ---
+## Ejemplo 1 en Python con NLTK
+```python
+from nltk.stem import WordNetLemmatizer
+import nltk
+nltk.download('wordnet')
+nltk.download('omw-1.4')
+
+# Sample text
+text = "Natural Language Processing enables computers to understand human language."
+
+# Tokenize the text
+tokens = text.split()
+
+# Initialize the lemmatizer
+lemmatizer = WordNetLemmatizer()
+
+# Lemmatize the tokens
+lemmatized_tokens = [lemmatizer.lemmatize(word) for word in tokens]
+
+print("Original Tokens:")
+print(tokens)
+
+print("\\nLemmatized Tokens:")
+print(lemmatized_tokens)
+```
+---
+## Ejemplo 2 con spacy
+```python
+import spacy
+nlp = spacy.load("es_core_news_sm")
+
+doc = nlp("Los estudiantes están programando aplicaciones inteligentes.")
+for token in doc:
+    print(token.text, "→", token.lemma_)
+```
+---
 ## Diferencias entre Stemming y Lematización
 
 | Característica | Stemming                               | Lematización                   |
@@ -269,31 +305,15 @@ Implica usar un diccionario y análisis morfológico para devolver la forma base
 | Resultado      | Puede no ser palabra válida            | Siempre produce palabra válida |
 
 ---
-# Ejemplo en python
-```bash
-pip install spacy
-python -m spacy download es_core_news_sm
-```
-```python
-import spacy
-nlp = spacy.load("es_core_news_sm")
+## Principales aplicaciones de Lematización
 
-doc = nlp("Los estudiantes están programando aplicaciones inteligentes.")
-for token in doc:
-    print(token.text, "→", token.lemma_)
-```
----
-## Principales aplicaciones de Lematización y Stemming
-
-- Recuperación de información (search engines).
+- Motores de búsqueda (search engines).
 
 - Análisis de sentimientos (identificar emociones sin importar conjugaciones).
 
 - Clasificación de textos académicos o legales.
 
 Mas información: [¿Qué son el stemming y la lematización?](https://www.ibm.com/mx-es/think/topics/stemming-lemmatization)
-
-
 
 ---
 # Stopwords
@@ -409,5 +429,57 @@ California LOC
 
 - Sistemas de recomendación personalizados.
 ---
-# Vectorización de Texto
+# Resumen de Texto
+Es una técnica valiosa que tiene como objetivo generar un resumen conciso y coherente de un texto mas extenso.
+Retiene la información mas importante y los puntos claves, mientras que reduce significativamente la cantidad de texto que necesita ser leído.
+Resumen extractivo: se basa en identificar las oraciones más importantes dentro de un texto y unirlas para formar un resumen.
+Resumen abstractivo: se acerca más a la forma en que los humanos suelen resumir el texto. 
 
+---
+## Ejemplo en Python
+```python
+from transformers import pipeline
+
+resumen = pipeline("summarization", model="facebook/bart-large-cnn")
+texto = """La inteligencia artificial está transformando sectores como la medicina, la educación y la industria.
+Permite optimizar procesos y crear soluciones innovadoras que mejoran la calidad de vida."""
+print(resumen(texto, max_length=40, min_length=15, do_sample=False))
+```
+---
+# Chatbots
+
+Es una sofisticada aplicación para simular una conversación humana a través de interacciones de texto o voz.
+
+- Emplean técnicas avanzadas de procesamiento del lenguaje natural (NLP) para interpretar y responder con precisión a las entradas de los usuarios.
+
+- Pueden integrarse en diversas plataformas (sitios web, mensajería, aplicaciones móviles).
+---
+## Tipos de chatbots
+- **Basados en reglas**. Operan en función de un conjunto de reglas y patrones predefinidos. Siguen un guión para responder a entradas específicas. Usado para tareas simples: ***responder preguntas frecuentes, proporcionar información básica ***
+- **Autoaprendizaje**. También conocidos como chatbots impulsados por IA. Emplean algoritmos de aprendizaje automático para entender y generar respuestas. Pueden manejar interacciones más complejas y mejorar con el tiempo al aprender de las entradas de usuarios.
+- **Híbrido**. Combinan enfoques basados en reglas y autoaprendizaje para aprovechar las fortalezas de ambos.
+---
+## Ejemplo de chatbot simple basado en reglas
+```python
+def chatbot_response(user_input):
+    responses = {
+        "hello": "Hello! How can I assist you today?",
+        "hi": "Hi there! What can I do for you?",
+        "how are you?": "I'm just a chatbot, but I'm here to help you!",
+        "what is your name?": "I am ChatBot, your virtual assistant.",
+        "bye": "Goodbye! Have a great day!"
+    }
+
+    user_input = user_input.lower()
+    return responses.get(user_input, "I'm sorry, I don't understand that. Can you please rephrase?")
+
+# Test the chatbot
+while True:
+    user_input = input("You: ")
+    if user_input.lower() == "exit":
+        print("ChatBot: Goodbye! Have a great day!")
+        break
+    response = chatbot_response(user_input)
+    print(f"ChatBot: {response}")
+```
+---

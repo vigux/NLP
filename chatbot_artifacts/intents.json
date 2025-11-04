@@ -1,0 +1,64 @@
+{
+  "saludo": {
+    "patterns": [
+      "hola",
+      "buenos días",
+      "buenas tardes",
+      "qué tal",
+      "hey",
+      "hola"
+    ],
+    "responses": [
+      "¡Hola! ¿En qué puedo ayudarte?",
+      "¡Un gusto saludarte! ¿Qué te gustaría saber?",
+      "que tal, como estas"
+    ]
+  },
+  "despedida": {
+    "patterns": [
+      "adiós",
+      "hasta luego",
+      "gracias, nos vemos",
+      "me voy",
+      "bye"
+    ],
+    "responses": [
+      "¡Hasta luego! Que tengas un excelente día.",
+      "¡Nos vemos! Vuelve cuando quieras."
+    ]
+  },
+  "clima": {
+    "patterns": [
+      "¿cómo está el clima?",
+      "¿va a llover hoy?",
+      "pronóstico del tiempo",
+      "clima actual",
+      "buenos dias"
+    ],
+    "responses": [
+      "No tengo datos del clima en tiempo real, pero puedo ayudarte a consultarlo si me indicas tu ciudad.",
+      "El clima depende de tu ubicación. ¿En qué ciudad te encuentras?",
+      "como esta el clima"
+    ]
+  },
+  "agradecimiento": {
+    "patterns": [
+      "gracias",
+      "muchas gracias",
+      "te lo agradezco",
+      "mil gracias"
+    ],
+    "responses": [
+      "¡Con gusto! ¿Algo más en lo que te pueda apoyar?",
+      "Para servirte, ¿quieres preguntar otra cosa?"
+    ]
+  },
+  "saludo amplio": {
+    "patterns": [
+      "hola que tal"
+    ],
+    "responses": [
+      "hola, como estas"
+    ]
+  }
+}
